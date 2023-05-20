@@ -1,6 +1,7 @@
 public class AddedDevice implements Device {
 
     public String deviceName;
+    public int pendingWrites = 0;
 
     public AddedDevice(String deviceName){
         this.deviceName = deviceName;

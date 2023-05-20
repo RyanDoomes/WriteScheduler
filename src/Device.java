@@ -1,4 +1,6 @@
 public interface Device {
+    
+    public int pendingWrites = 0;
 
     void name(String name);
 
