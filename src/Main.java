@@ -1,8 +1,11 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 
 public class Main implements Device, WriteScheduler {
     public static void main(String[] args) {
+
         System.out.println("***** Welcome to Gray's Write Scheduler System! ***** ");
 
         addNewDevice();
@@ -19,6 +22,7 @@ public class Main implements Device, WriteScheduler {
 
 
         public static void addNewDevice() {
+            List<AddedDevice> devices = new ArrayList<>();
             Scanner scanner = new Scanner(System.in);
             String answer = "";
             while(!answer.equalsIgnoreCase("N")) {
@@ -31,6 +35,7 @@ public class Main implements Device, WriteScheduler {
                     System.out.println("What is the name of the device?");
                     String deviceName = scanner.nextLine();
                     Device addedDevice = new AddedDevice(deviceName);
+                    devices.add((AddedDevice) addedDevice);
                     System.out.println("New device added: " + ((AddedDevice) addedDevice).deviceName);
                     System.out.println("How many writes would you like to schedule for this device?");
                     int i = scanner.nextInt();
