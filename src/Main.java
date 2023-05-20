@@ -1,11 +1,13 @@
 import java.util.Scanner;
 
+
 public class Main implements Device, WriteScheduler {
     public static void main(String[] args) {
         System.out.println("***** Welcome to Gray's Write Scheduler System! ***** ");
 
         addNewDevice();
 
+        System.out.println("Thank you for using Gray's Write Scheduler System!");
     }
 
 
@@ -31,10 +33,13 @@ public class Main implements Device, WriteScheduler {
                     Device addedDevice = new AddedDevice(deviceName);
                     System.out.println("New device added: " + ((AddedDevice) addedDevice).deviceName);
                     System.out.println("How many writes would you like to schedule for this device?");
+                    int i = scanner.nextInt();
+                    ((AddedDevice) addedDevice).pendingWrites = i;
+                    System.out.println("You have scheduled "+((AddedDevice)addedDevice).pendingWrites+" writes for " +((AddedDevice) addedDevice).deviceName);
                 }
 
                 }
-            System.out.println("Thank you for using Gray's Write Scheduler System!");
+
 
             }
 
